@@ -1,0 +1,152 @@
+[{
+  "version": "1.0",
+  "image": {
+    "name": "/home/videosdownloader/public_html/image/public/uploadt/FIS_LOGO.jpg",
+    "baseName": "FIS_LOGO.jpg",
+    "format": "PNG",
+    "formatDescription": "PNG",
+    "mimeType": "image/png",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 1000,
+      "height": 509,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 56.69,
+      "y": 56.69
+    },
+    "printSize": {
+      "x": 17.6398,
+      "y": 8.97866
+    },
+    "units": "PixelsPerCentimeter",
+    "type": "PaletteAlpha",
+    "baseType": "Undefined",
+    "endianness": "Undefined",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 1,
+      "red": 8,
+      "green": 8,
+      "blue": 1
+    },
+    "pixels": 2036000,
+    "imageStatistics": {
+      "Overall": {
+        "min": 63,
+        "max": 255,
+        "mean": 234.724,
+        "median": 255,
+        "standardDeviation": 9594.44,
+        "kurtosis": 5.19177,
+        "skewness": -2.51491,
+        "entropy": 0.125337
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 255,
+        "max": 255,
+        "mean": 255,
+        "median": 255,
+        "standardDeviation": 0,
+        "kurtosis": 8.192e+51,
+        "skewness": 1e+36,
+        "entropy": 0
+      },
+      "red": {
+        "min": 141,
+        "max": 255,
+        "mean": 229.528,
+        "median": 255,
+        "standardDeviation": 12052.8,
+        "kurtosis": -0.210454,
+        "skewness": -1.32759,
+        "entropy": 0.164353
+      },
+      "green": {
+        "min": 198,
+        "max": 255,
+        "mean": 242.265,
+        "median": 255,
+        "standardDeviation": 6026.59,
+        "kurtosis": -0.21014,
+        "skewness": -1.32773,
+        "entropy": 0.185581
+      },
+      "blue": {
+        "min": 63,
+        "max": 255,
+        "mean": 212.102,
+        "median": 255,
+        "standardDeviation": 20298.4,
+        "kurtosis": -0.210206,
+        "skewness": -1.32768,
+        "entropy": 0.151414
+      }
+    },
+    "renderingIntent": "Perceptual",
+    "gamma": 0.45455,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "matteColor": "#BDBDBD",
+    "backgroundColor": "#FFFFFF",
+    "borderColor": "#DFDFDF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 1000,
+      "height": 509,
+      "x": 0,
+      "y": 0
+    },
+    "dispose": "Undefined",
+    "iterations": 0,
+    "compression": "Zip",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2022-06-13T12:00:53+00:00",
+      "date:modify": "2022-06-13T12:00:53+00:00",
+      "png:cHRM": "chunk was found (see Chromaticity, above)",
+      "png:gAMA": "gamma=0.45455 (See Gamma, above)",
+      "png:IHDR.bit-depth-orig": "8",
+      "png:IHDR.bit_depth": "8",
+      "png:IHDR.color-type-orig": "6",
+      "png:IHDR.color_type": "6 (RGBA)",
+      "png:IHDR.interlace_method": "0 (Not interlaced)",
+      "png:IHDR.width,height": "1000, 509",
+      "png:pHYs": "x_res=5669, y_res=5669, units=1",
+      "png:sRGB": "intent=0 (Perceptual Intent)",
+      "signature": "1c0367b1418daab63ccc7f1f06c5c4e1b020ed00877f0b34cee877cc0e996548"
+    },
+    "tainted": false,
+    "filesize": "43958B",
+    "numberPixels": "509000",
+    "pixelsPerSecond": "12.8115MB",
+    "userTime": "0.040u",
+    "elapsedTime": "0:01.039",
+    "version": "ImageMagick 7.0.10-58 Q16 x86_64 2021-01-14 https://imagemagick.org"
+  }
+}]

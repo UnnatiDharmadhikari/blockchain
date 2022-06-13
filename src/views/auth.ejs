@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>FIS Log-In</title>
+
+        <script src="https://kit.fontawesome.com/5f63737dd8.js" crossorigin="anonymous"></script>
+
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" src="style.css"/>
+    </head>
+    <body style="background:linear-gradient(90deg, #008080, #00ff55)">
+        
+        <%if(currentUser){%>
+            <%=currentUser.username%>
+            <a href="/logout">Log Out</a>
+        <%}%>
+
+        <div class=" container" style="width:400px; margin-top:20px;">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script><lottie-player src="https://assets7.lottiefiles.com/packages/lf20_q9mzugao.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+            <!-- <img src="https://www.logolynx.com/images/logolynx/ce/ced29a81411c4743e206638bf01b3dcd.png" alt="FIS LOGO" width="200px" height="90px" style="margin-left: 50px; "> -->
+            <!-- <img src="https://finovate-wpengine.netdna-ssl.com/wp-content/uploads/2015/04/FISLogo.jpg" alt="FIS LOGO" width="200px" height="90px" style="margin-left: 50px; "> -->
+            <!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script><lottie-player src="./assets/FIS_LOGO_JSON.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player> -->
+            <!-- <img src="./assets/FIS_LOGO.jpg" alt="FIS LOGO" width="400px" height="300px"> -->
+
+            <form id="register" action="/signup" method="POST" style="display: none">
+
+                <div style="margin-bottom: 20px;">
+                    <i class="fa-solid fa-user" style="color: white;"></i>
+                    <input type="text" name="username" class="form-control" style="border: none;
+                    border-bottom: 2px solid #D1D1D4;
+                    background: none;
+                    padding-left: 24px;
+                    font-weight: 700;
+                    width: 75%;
+                    transition: .2s;
+                    color: white;
+                    margin-top: -30px;">
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <i class="fa-solid fa-unlock" style="color: white;"></i>
+                    <input type="password" name="password" class="form-control" style="border: none;
+                    border-bottom: 2px solid #D1D1D4;
+                    background: none;
+                    padding: 10px;
+                    padding-left: 24px;
+                    font-weight: 700;
+                    width: 75%;
+                    transition: .2s;
+                    color: white;
+                    margin-top: -30px;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <i class="fa-solid fa-unlock" style="color: white;"></i>
+                    <input type="password" class="form-control" style="border: none;
+                    border-bottom: 2px solid #D1D1D4;
+                    background: none;
+                    padding: 10px;
+                    padding-left: 24px;
+                    font-weight: 700;
+                    width: 75%;
+                    transition: .2s;
+                    color: white;
+                    margin-top: -30px;">
+                </div>
+                <div class="loginsubmit" type="submit"
+                    style="margin-bottom:5px; background: #fff;
+                    font-size: 17px;
+                    margin-top: 30px;
+                    margin-left: 60px;
+                    padding: 16px 20px;
+                    border-radius: 26px;
+                    border: 1px solid #D4D3E8;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    display: flex;
+                    align-items: center;
+                    width: 40%;
+                    color: #04701c;
+                    box-shadow: 0px 12px 12px #083e18;
+                    cursor: pointer;
+                    border-color: #53db7c;
+                    outline: none;
+                    transition: .5s;">
+                    <input type="submit" value="Register"style="font-size: 20px; font-weight: 700; color: #04701c; border:none; background:white; padding:0px; margin:0px;">
+                    <i class="fa-solid fa-circle-check" style="margin-left:15px; font-size: 25px;"></i></input>
+                </div>
+                <br>
+                <font color="#04701c" size=3 style="cursor:pointer; margin-left: 40px;" onclick="$('#register').hide(); $('#login').show();">Already a member? Sign In</font>
+
+            </form>
+
+            <form id="login" action="/signin" method="POST">
+
+                <div style="margin-bottom: 30px;">
+                    <i class="fa-solid fa-user" style="color: white;"></i>
+                    <input type="text" name="username" class="form-control" style="border: none;
+                    border-bottom: 2px solid #D1D1D4;
+                    background: none;
+                    padding-left: 24px;
+                    font-weight: 700;
+                    width: 75%;
+                    transition: .2s;
+                    color: white;
+                    margin-top: -30px;">
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <i class="fa-solid fa-unlock" style="color: white;"></i>
+                    <input type="password" name="password" class="form-control" style="border: none;
+                    border-bottom: 2px solid #D1D1D4;
+                    background: none;
+                    padding: 10px;
+                    padding-left: 24px;
+                    font-weight: 700;
+                    width: 75%;
+                    transition: .2s;
+                    color: white;
+                    margin-top: -30px;">
+                </div>
+                <div class="loginsubmit" type="submit"
+                    style="margin-bottom:5px; background: #fff;
+                    font-size: 17px;
+                    margin-top: 30px;
+                    margin-left: 60px;
+                    padding: 16px 20px;
+                    border-radius: 26px;
+                    border: 1px solid #D4D3E8;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    display: flex;
+                    align-items: center;
+                    width: 40%;
+                    color: #04701c;
+                    box-shadow: 0px 12px 12px #083e18;
+                    cursor: pointer;
+                    border-color: #53db7c;
+                    outline: none;
+                    transition: .5s;">
+                    <input type="submit" value="Log In"style="font-size: 20px; font-weight: 700; color: #04701c; border:none; background:white; padding:0px; margin:0px;">
+                    <i class="fa-solid fa-right-to-bracket" style="margin-left:17px; font-size: 25px;"></i></input>
+                </div>
+                <br>
+                <font color="#04701c" size=3 style="cursor:pointer; margin-left: 20px;" onclick="$('#login').hide(); $('#register').show();">Not a member yet? Register here</font>
+            </form>
+
+        </div>
+
+    </body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.js"></script>
+    <script type="text/javascript" language="javascript" src="index.js"></script>
+    <script src="/contract.js"></script>
+
+</html>

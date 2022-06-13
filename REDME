@@ -1,0 +1,8 @@
+ganache
+
+import private keys in metamask
+
+truffle migrate
+
+cd src/
+nodemon app.js
