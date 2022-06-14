@@ -31,18 +31,14 @@ App = {
 
                                                 <span><b>Start-Up ID: </b>${tender[0]}</span>
                                                 <span><b>Start-Up Name: </b>${tender[1]}</span>
-                                                <span><b>Quantity: </b>${tender[3]}</span>
+                                                <span><b>For </b>${tender[3]} % </span>
                                                 <span><b>Start-Up Address: </b>${tender[4]}</span>
-
                                                 <hr>
-
                                                 <center style="margin-bottom:10px;">
-                                                    <input class="form-control" type="number" style="margin-bottom:10px;" id="ppi${tender[0]}" placeholder="Price per Item">
-                                                    <button class="w3-button w3-green" style="width:150px;" onclick="App.makeBid(${tender[0]});">Make a Investment</button>
+                                                    <input class="form-control" type="number" style="margin-bottom:10px;" id="ppi${tender[0]}" placeholder="My Offer">
+                                                    <button class="w3-button w3-green" style="width:150px;" onclick="App.makeBid(${tender[0]});">Make an Investment</button>
                                                 </center>
-
                                             </div>
-                                            
                                         </div>`
 
             $("#allTenders").append(tenderTemplate);

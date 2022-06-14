@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Bidder</title>
+    <title>Investor</title>
+    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/8/83/FIS_logo.svg">
 
     <script src="https://kit.fontawesome.com/5f63737dd8.js" crossorigin="anonymous"></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
@@ -123,7 +124,7 @@
                             background="transparent" speed="1" style="margin-left: 120px; width: 300px; height: 315px;"
                             loop autoplay></lottie-player>
                         <button type="button" class="w-100 btn btn-lg btn-outline-success" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal11" onclick="showAllTenders();">Make a Investment</button>
+                            data-bs-target="#exampleModal11" onclick="showAllTenders();">Make an Investment</button>
                     </div>
                 </div>
             </div>
@@ -146,17 +147,16 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Make a Investment</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Make an Investment</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div id="listAllTenders" style="margin-top:20px; display: none" class="container card">
-
                         <table id="allTenders" class="table table-hover">
                             <tr style="text-align:center">
                                 <td>Id</td>
                                 <td>Start-Up name</td>
-                                <td>Quantity</td>
+                                <td>%</td>
                                 <td>Invest Here</td>
                             </tr>
                         </table>
@@ -174,15 +174,12 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-
-
                     <div id="bidList" style="margin-top:20px; display:none" class="container card">
-
                         <table id="myBids" class="table table-hover">
                             <tr style="text-align:center">
                                 <td>Id</td>
                                 <td>Start-Up name</td>
-                                <td>Investment per Item</td>
+                                <td>%</td>
                             </tr>
                         </table>
                     </div>
@@ -191,10 +188,7 @@
         </div>
     </div>
     <br>
-
     <div id="tenderPopup"></div>
-
-
     <footer>
         <!-- Copyright -->
         <div class="text-center p-1" style="background-color:#093">
