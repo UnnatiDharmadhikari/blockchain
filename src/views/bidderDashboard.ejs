@@ -2,33 +2,36 @@
 <html lang="en">
 
 <head>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+
     <title>Bidder</title>
 
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/5f63737dd8.js" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </head>
 
 <style>
-
     .abc {
-        width:100%;
-        height:100%;
-        opacity:.95;
-        top:0;
-        left:0;
-        display:none;
-        position:fixed;
-        background-color:#313131;
-        overflow:auto
+        width: 100%;
+        height: 100%;
+        opacity: .95;
+        top: 0;
+        left: 0;
+        display: none;
+        position: fixed;
+        background-color: #313131;
+        overflow: auto
     }
 
-	.x{
+    .x {
         position: absolute;
         top: 50px;
         right: 497px;
@@ -40,11 +43,13 @@
         line-height: 40px;
         text-align: center;
         cursor: pointer;
-	}
+    }
 
     #loading {
-        border: 2px solid #f3f3f3; /* Light grey */
-        border-top: 2px solid #3498db; /* Blue */
+        border: 2px solid #f3f3f3;
+        /* Light grey */
+        border-top: 2px solid #3498db;
+        /* Blue */
         border-radius: 50%;
         width: 25px;
         height: 25px;
@@ -52,71 +57,158 @@
     }
 
     @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
+        0% {
+            transform: rotate(0deg);
+        }
 
+        100% {
+            transform: rotate(360deg);
+        }
+    }
 </style>
 
 <body>
 
-    <div style="margin-top:20px; width: 650px;" class="container card w3-section">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success mb-0">
+            <!-- Container wrapper -->
+            <div class="container-fluid" style="margin-right: 260px;">
+                <!-- Navbar brand -->
+                <b>
+                    <a class="navbar-brand mb-0" href="#">
 
-        <span><b>Address: </b><font id="account" size=2></font></span>
-        <span><b>Username: </b><font id="username" size=2><%=currentUser.username%></font></span>      
+                        <img src="https://www.logolynx.com/images/logolynx/ce/ced29a81411c4743e206638bf01b3dcd.png"
+                            alt="FIS LOGO" width="100" height="50">
+                    </a>
+                </b>
+            </div>
 
-        <hr>
-    
-        <center style="margin-bottom:10px;">
-            <button class="w3-button w3-green" style="width:150px;" onclick="showAllTenders();">Make a Bid</button>
-            <button class="w3-button w3-blue" style="width:150px;" onclick="showBids();">My Bids</button><br>
-            <!-- <button class="w3-button w3-red" style="width:150px;" onclick="showBids();">Show all Bids</button><br> -->
-            <font size=1 color="blue" style="cursor: pointer;" onclick="location.href='/logout'">Not you? Logout here.</font>
-        </center>
+            <span style="color:white  ; white-space: nowrap;"> <b> Address: </b>
+                <font style="white-space: nowrap;" color="white" id="account" size=2> </font>
+            </span>
 
-    </div>  
-   
-    <div id="listAllTenders" style="margin-top:20px; display: none" class="container card"> 
+            <div class="me-auto mt-2 mb-0 mb-lg-0" style="color:rgb(29, 179, 74); margin-left: -170px;">
 
-        <table id="allTenders" class="table table-hover">
-            <center>
-                <h6><b>All Tenders</b></h6>
-            </center>
-            <hr style="margin-top: -5px; margin-bottom: -1px;">
-            <tr style="text-align:center">
-                <td>Id</td>
-                <td>Product name</td>
-                <td>Quantity</td>
-                <td>Bid Here</td>
-            </tr>
-        </table>
-        
+                <div class="dropdown " style="margin-left: 500px; padding-top: 10px;">
+                    <a style=" background:#0c4;" class="btn btn-secondary dropdown-toggle" href="#" role="button"
+                        id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"> <i class="fas fa-user"
+                            style="font-size: 20px; color: white;"></i> <b> User Details </b>
+                    </a>
+
+                    <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item">
+                                <%=currentUser.username%>
+                            </a></li>
+                        <li><a class="dropdown-item " size=1 color="blue" style="cursor: pointer;"
+                                onclick="location.href='/logout'">
+                                Logout</a></li>
+
+                    </ul>
+
+                </div>
+                <br>
+            </div>
+        </nav>
+    </header>
+    <br>
+    <div style="margin-top:20px;" class="container">
+
+        <div class="row row-cols-1 row-cols-md-2 mb-2 text-center">
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-body">
+                        <script
+                            src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                        <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_aykitofz.json"
+                            background="transparent" speed="1" style="margin-left: 120px; width: 300px; height: 315px;"
+                            loop autoplay></lottie-player>
+                        <button type="button" class="w-100 btn btn-lg btn-outline-success" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal11" onclick="showAllTenders();">Make a Investment</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-body">
+                        <script
+                            src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
+                        <dotlottie-player src="https://assets5.lottiefiles.com/dotlotties/dlf10_02rya97c.lottie"
+                            background="transparent" speed="1" style="width: 300px; height: 315px; margin-left: 120px;"
+                            loop autoplay></dotlottie-player>
+                        <button type="button" class="w-100 btn btn-lg btn-outline-success" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal22" onclick="showBids();">My Investments</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal11" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Make a Investment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="listAllTenders" style="margin-top:20px; display: none" class="container card">
+
+                        <table id="allTenders" class="table table-hover">
+                            <tr style="text-align:center">
+                                <td>Id</td>
+                                <td>Start-Up name</td>
+                                <td>Quantity</td>
+                                <td>Invest Here</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div id="bidList" style="margin-top:20px; display:none" class="container card">
+    <div class="modal fade" id="exampleModal22" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">My Investments</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
 
-        <table id="myBids" class="table table-hover">
-            <center>
-                <h6><b>My Bids</b></h6>
-            </center>
-            <hr style="margin-top: -5px; margin-bottom: -1px;">
-            <tr style="text-align:center">
-                <td>Id</td>
-                <td>Product name</td>
-                <td>Bid per Item</td>
-            </tr>
-        </table>
 
+                    <div id="bidList" style="margin-top:20px; display:none" class="container card">
+
+                        <table id="myBids" class="table table-hover">
+                            <tr style="text-align:center">
+                                <td>Id</td>
+                                <td>Start-Up name</td>
+                                <td>Investment per Item</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <br>
 
     <div id="tenderPopup"></div>
 
+
+    <footer>
+        <!-- Copyright -->
+        <div class="text-center p-1" style="background-color:#093">
+            © 2022 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">Team Techpirates</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" language="javascript" src="truffle-contract.js"></script>
-<script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.js"></script>
+<script language="javascript" type="text/javascript"
+    src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.js"></script>
 <script type="text/javascript" language="javascript" src="loadEthereum.js"></script>
 <script type="text/javascript" language="javascript" src="bidderDashboard.js"></script>
 

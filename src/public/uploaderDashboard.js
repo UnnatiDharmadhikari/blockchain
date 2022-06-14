@@ -21,6 +21,16 @@ App = {
                                             <td>${tender[3]}</td>
                                         </tr>`;
                 $("#mytenders").append(tenderTemplate);
+                const bid = await App.TenderAuction.bids(i);
+                if(bid[2] == tender[1]) {
+                    const biderTemplate = `<tr style="text-align:center">
+                                                <td>${bid[0]}</td>
+                                                <td>${bid[2]}</td>
+                                                <td>${bid[3]}</td>
+                                                <td>
+                                            </tr>`;
+                    $("#myBider").append(biderTemplate);
+                }
             }
         }
     },
@@ -56,10 +66,18 @@ App = {
 
 function uploadTenders() {
     $("#tenderList").hide();
+    $("#biderList").hide();
     $("#uploadTender").show();
 }
 
 function showTenders() {
     $("#tenderList").show();
+    $("#biderList").hide();
+    $("#uploadTender").hide();
+}
+
+function showBiders() {
+    $("#biderList").show();
+    $("#tenderList").hide();
     $("#uploadTender").hide();
 }

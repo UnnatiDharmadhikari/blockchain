@@ -146,10 +146,12 @@ app.get('/createUploader', (req,res) => {
 
 app.get('/createBidder', (req,res) => {
     User.findOne({username: req.query.username}, (err, user) => {
-        console.log(user.username);
-        if(user.type=='false') {
-            user.type = 'bidder';
-            user.save();
+        if (user != null) {
+            console.log(user.username);
+            if(user.type=='false') {
+                user.type = 'bidder';
+                user.save();
+            }
         }
     });
     res.redirect('/');

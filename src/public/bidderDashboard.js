@@ -19,27 +19,26 @@ App = {
                                         <td>${tender[0]}</td>
                                         <td>${tender[1]}</td>
                                         <td>${tender[3]}</td>
-                                        <td><button onclick="popup('${tender[0]}')" class="btn btn-success">Bid</button></td>
+                                        <td><button onclick="popup('${tender[0]}')" class="btn btn-success">Invest</button></td>
                                     <tr>`;
             
             const tenderPopupTemplate = `<div class="abc" id="tenderId${tender[0]}">
 				
                                             <br><br><br>
-                                            
-                                            <span onclick="div_hide('${tender[0]}')" style="float:right" class="x">X</span>
 
                                             <div style="margin-top:20px; width: 550px;" class="container card w3-section">
-                                                
-                                                <span><b>Tender ID: </b>${tender[0]}</span>
-                                                <span><b>Tender: </b>${tender[1]}</span>
+                                            <button type="button" onclick="div_hide('${tender[0]}')" class="btn-close" style="margin-left: 500px;" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                                                <span><b>Start-Up ID: </b>${tender[0]}</span>
+                                                <span><b>Start-Up Name: </b>${tender[1]}</span>
                                                 <span><b>Quantity: </b>${tender[3]}</span>
-                                                <span><b>Uploader Address: </b>${tender[4]}</span>
+                                                <span><b>Start-Up Address: </b>${tender[4]}</span>
 
                                                 <hr>
 
                                                 <center style="margin-bottom:10px;">
                                                     <input class="form-control" type="number" style="margin-bottom:10px;" id="ppi${tender[0]}" placeholder="Price per Item">
-                                                    <button class="w3-button w3-green" style="width:150px;" onclick="App.makeBid(${tender[0]});">Make a Bid</button>
+                                                    <button class="w3-button w3-green" style="width:150px;" onclick="App.makeBid(${tender[0]});">Make a Investment</button>
                                                 </center>
 
                                             </div>
@@ -99,6 +98,7 @@ function showBids() {
 }
 
 function popup(id) {
+    $("#exampleModal11").modal('toggle');
     $("#tenderId"+id).show();
 }
 
